@@ -1,0 +1,251 @@
+$primaryColor: #6200ee;
+$primaryColorDark: darken($primaryColor, 20%);
+:root {
+  --spacing: 4px;
+  --border-radius: 3px;
+  --button-height: 40px;
+  --selector-x: 0;
+  --selector-height: 50px;
+  --body-background: white;
+  --error-color: #b00020;
+  --primary-btn: #{$primaryColor};
+  --primary-btn-dark: #{$primaryColorDark};
+}
+@media screen and (max-width: 375) {
+  :root {
+    --body-background: white;
+  }
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+body {
+  background-color: var(--body-background);
+  font-family: 'Roboto', sans-serif;
+  width: 375px;
+}
+
+.button {
+  background-color: #5c636a;
+  border-color: #5c636a;
+  border-radius: var(--border-radius);
+  color: white;
+  transition: background-color 0.25s ease;
+  margin-top: 2px;
+
+  &:disabled {
+    background-color: #9fa4aa;
+  }
+}
+
+.filter {
+  background-color: #ffc107;
+  color: #5c636a;
+}
+
+.locked {
+  background-color: #157347;
+}
+
+#reset-container, #matches-container, #eliminators-container, #doc-container {
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+#doc-container{
+  margin-top: 10px;
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+#header {
+  color: var(--primary-btn-dark);
+  & > * {
+    font-size: 48px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+  .icon {
+    color: salmon;
+  }
+}
+
+input {
+  border-color: var(--primary-btn-dark);
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+button {
+  font-size: 1.25rem;
+  background-color: white;
+  border-style: none;
+  height: var(--button-height);
+  padding-left: 0px;
+  padding-right: 0px;
+  color: var(--primary-btn);
+  place-content: center;
+  place-self: center;
+  place-items: center;
+  display: flex;
+  &:disabled {
+    cursor: not-allowed;
+    color:lightgrey;
+  }
+}
+
+.btn-icon {
+  width: 1.75rem;
+  font-size: 24px;
+  
+  
+}
+.btn-icon--cancel {
+  color: var(--error-color);
+}
+
+.main {
+  width: 360px;
+  
+}
+
+p {
+  font-size: 16px;
+  .material-icons {
+    font-size: 16px;
+  }
+}
+
+
+$button-height: 40px;
+$button-width: 40px;
+#wordgrid {
+  position: relative;
+  padding: 0px 5px;
+  height: 315px;
+  #row-0 {
+    top: 10px;
+  }
+
+  #row-1 {
+    top: 60px;
+  }
+
+  #row-2 {
+    top: 110px;
+  }
+
+  #row-3 {
+    top: 160px;
+  }
+
+  #row-4 {
+    top: 210px;
+  }
+  #row-5 {
+    top: 260px;
+  }
+
+  > div {
+    margin-left: 5px;
+  }
+
+  .wordrow {
+    position:absolute;
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(5,$button-width);
+      column-gap: var(--spacing);
+      left: 10px;
+      .button-letter {
+        height: $button-height;
+        width: $button-width;
+        z-index: 2;
+      }
+    }
+    .input-container {
+      position: relative;
+      display: flex;
+      height: 35px;
+      justify-content: flex-start;
+      margin-left: 10px;
+      margin-top: 2px;
+      z-index: 5;
+      input {
+        width: 100px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  
+  #selector {
+    position: absolute;
+    top: calc(5px + var(--selector-height) * var(--selector-x));
+    margin-left: 0px;
+    height: var(--selector-height);
+    border: 2px solid lightgreen;
+    border-radius: var(--border-radius);
+    width: 340px;
+    transition: top 0.2s ease-out;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: var(--spacing);
+    padding: 0px var(--spacing);
+  }
+}
+
+#sortedWordList, #eliminatorWordList {
+  margin-top: 10px;
+  .wordList {
+  border-radius: var(--border-radius);
+  border: 1px solid lightgray;
+  padding: var(--spacing) var(--spacing);
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  row-gap: var(--spacing);
+  max-height: 150px;
+  overflow-y:scroll;
+
+  div {
+    place-self: left;
+    border-radius: var(--border-radius);
+    width: 70px;
+    height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      background-color:lightgreen;
+      font-weight: 700;
+    }
+  }
+}
+}

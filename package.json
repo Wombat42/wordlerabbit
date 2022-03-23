@@ -1,0 +1,23 @@
+{
+  "name": "wordle-rabbit",
+  "version": "1.0.0",
+  "description": "Provides pretty accurate guesses for winning a wordle game.\n\nread index.js for an explanation",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "get-stream": "6.0.1",
+    "parcel-bundler": "^1.6.1",
+    "word-stream": "2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "typescript": "4.4.4"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  },
+  "keywords": []
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    
+    <title>Wordle Rabbit</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="header">
+        <h1>Wordle Rabbit</h1>
+        <span class="material-icons icon">cruelty_free</span>
+      </div>
+      <div class="spaced main">
+        <div id="guess">
+          <p>
+            If you see this text, then click above the "Wordle Rabbit" title on
+            the refresh button.
+          </p>
+        </div>
+        <div id="reset-container">
+          <button id="resetButton" style="display: none;">
+            <!--span class="material-icons md-24">refresh</span -->
+            <span>Reset</span>
+          </button>
+        </div>
+        <div id="matches-container" style="display: none;">
+          <h2>Matches</h2>
+          <div id="sortedWordList"></div>
+        </div>
+        <div id="eliminators-container" style="display: none;">
+          <h2>Eliminators</h2>
+          <div id="eliminatorWordList"></div>
+        </div>
+      </div>
+      <div id="doc-container" style="display: none;">
+        <p>
+          Click on the letters and they will cycle through the same colors as
+          regular wordle. When yellow, the letter is in the word, but not in
+          that spot. When green, the letter is in the word and at that spot.
+        </p>
+        <p>
+          Click
+          <em><span class="material-icons">done</span></em>
+          after updating the letters.
+        </p>
+        <p>
+          Click
+          <em><span class="material-icons">edit</span></em>
+          to type a replacement word.
+        </p>
+        <p>
+          Click <em><span class="material-icons">cancel</span></em> if the app
+          rejects the word. There are a lot of words in the list and some words
+          are not in the app's list.
+        </p>
+        <p>
+          Click on a word in the <em>Matches</em> section to use it. You can
+          only do this if you haven't clicked on one of the letters.
+        </p>
+        <p>
+          Use <em>Eliminators</em> to get rid of as many letters as possible.
+          It's best when you have many words that are all equally possible. 
+          Say you want to solve a word ending in <em>atch</em>. You could get matches for:
+          <ul>
+            <li>batch</li>
+            <li>catch</li>
+            <li>hatch</li>
+            <li>latch</li>
+            <li>match</li>
+            <li>natch</li>
+            <li>patch</li>
+            <li>ratch</li>
+            <li>watch</li>
+          </ul>
+          Your eliminator word may be <em>prowl</em> which would get rid of patch, ratch, watch, and latch. It could also uncover one as the solution.
+        </p>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
